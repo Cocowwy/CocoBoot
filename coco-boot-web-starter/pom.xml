@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>coco-boot-web-starter</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${coco-boot-version}</version>
     <name>coco-boot-web-starter</name>
     <description>coco-boot-web-starter 增强</description>
 
@@ -19,6 +19,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--引入coco-boot-common-->
+        <dependency>
+            <groupId>cn.cocowwy</groupId>
+            <artifactId>coco-boot-starter</artifactId>
+            <version>${coco-boot-version}</version>
         </dependency>
     </dependencies>
 

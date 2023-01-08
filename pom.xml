@@ -17,6 +17,8 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <!--version-coco-boot-->
+        <coco-boot-version>1.0-SNAPSHOT</coco-boot-version>
     </properties>
 
     <modules>

@@ -10,13 +10,9 @@
     </parent>
 
     <artifactId>coco-boot-starter</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${coco-boot-version}</version>
     <name>coco-boot-starter</name>
     <description>coco-boot-starter</description>
-
-    <properties>
-        <coco-boot-version>1.0-SNAPSHOT</coco-boot-version>
-    </properties>
 
     <dependencies>
         <!--引入SpringBoot的基础Starter-->
@@ -34,6 +30,12 @@
             <groupId>cn.cocowwy</groupId>
             <artifactId>coco-boot-common</artifactId>
             <version>${coco-boot-version}</version>
+        </dependency>
+        <!-- autoconfigure-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
