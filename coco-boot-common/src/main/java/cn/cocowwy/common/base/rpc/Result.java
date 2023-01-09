@@ -1,13 +1,14 @@
 package cn.cocowwy.common.base.rpc;
 
+import java.io.Serializable;
+
+
 /**
  * 统一RPC响应体
+ *
  * @author <a href="https://github.com/Cocowwy">Cocowwy</a>
  * @since 2023/1/6
  */
-
-import java.io.Serializable;
-
 public class Result<T> implements Serializable {
     private static final long serialVersionUID = 1L;
     private int code;

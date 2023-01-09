@@ -26,6 +26,11 @@
             <artifactId>coco-boot-starter</artifactId>
             <version>${coco-boot-version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>

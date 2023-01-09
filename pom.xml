@@ -25,6 +25,7 @@
         <module>coco-boot-common</module>
         <module>coco-boot-starter</module>
         <module>coco-boot-web-starter</module>
+        <module>test</module>
     </modules>
 
     <build>
