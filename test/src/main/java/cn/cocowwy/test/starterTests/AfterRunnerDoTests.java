@@ -17,7 +17,7 @@ public class AfterRunnerDoTests {
         log.info("testAfterRunnerDoMethod do");
     }
 
-    @AfterRunnerDo(blockOnError = false)
+    @AfterRunnerDo(blockOnError = false, sort = 100)
 //    @AfterRunnerDo(blockOnError = true)
     public void testAfterRunnerDoMethodOnError(String[] args) {
         throw new RuntimeException("testAfterRunnerDoMethodOnError");
