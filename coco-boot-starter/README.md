@@ -5,4 +5,4 @@
 
 
 ## 🍬 Feature2
-**SpringUtil** 提供SpringUtil类，可以获取到容器/Bean,可注入后者静态方法使用
+**SpringHolder** 提供Bean获取类，可获取到Bean

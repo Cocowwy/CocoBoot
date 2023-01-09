@@ -1,18 +1,16 @@
 package cn.cocowwy.cocobootstarter.holder;
 
 import cn.cocowwy.cocobootstarter.annotation.AfterRunnerDo;
-import cn.cocowwy.cocobootstarter.util.SpringUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.SmartInitializingSingleton;
+import org.springframework.cglib.core.MethodWrapper;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.MethodIntrospector;
 import org.springframework.core.annotation.AnnotatedElementUtils;
+import org.springframework.util.CollectionUtils;
 
 import java.lang.reflect.Method;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * 指定Bean方法的持有者
@@ -21,35 +19,92 @@ import java.util.concurrent.ConcurrentMap;
  */
 public class BeanMethodHolder implements SmartInitializingSingleton {
 
-    private static final Log LOG = LogFactory.getLog(BeanMethodHolder.class);
-    private static final ConcurrentMap<Method, AfterRunnerDo> AFTER_RUNNER_DO_METHOD_HOLDER = new ConcurrentHashMap<>(0);
+    private static List<AfterRunnerDoMethodWrapper> AFTER_RUNNER_DO_METHOD_HOLDER = null;
+
+    public static List<AfterRunnerDoMethodWrapper> afterRunnerDoList() {
+        if(CollectionUtils.isEmpty(AFTER_RUNNER_DO_METHOD_HOLDER)){
+            return Collections.emptyList();
+        }
+        return AFTER_RUNNER_DO_METHOD_HOLDER;
+    }
 
     @Override
     public void afterSingletonsInstantiated() {
-        ApplicationContext applicationContext = SpringUtil.getApplicationContext();
+        ApplicationContext applicationContext = SpringHolder.getApplicationContext();
         String[] beanNames = applicationContext.getBeanNamesForType(Object.class, false, true);
 
-        Map<Method, AfterRunnerDo> AfterRunnerDoMethodsMap = null;
         for (String beanName : beanNames) {
             Object bean = applicationContext.getBean(beanName);
 
-            AfterRunnerDoMethodsMap = MethodIntrospector
+            Map<Method, AfterRunnerDo> afterRunnerDoMethodsMap = MethodIntrospector
                     .selectMethods(bean.getClass(), (MethodIntrospector.MetadataLookup<AfterRunnerDo>) method
                             -> AnnotatedElementUtils.findMergedAnnotation(method, AfterRunnerDo.class));
-        }
 
-        if (AfterRunnerDoMethodsMap == null || AfterRunnerDoMethodsMap.isEmpty()) {
-            return;
-        }
-
-        // register
-        for (Map.Entry<Method, AfterRunnerDo> entry : AfterRunnerDoMethodsMap.entrySet()) {
-            Method method = entry.getKey();
-            AfterRunnerDo afterRunnerDo = entry.getValue();
-            if (afterRunnerDo.effect()) {
-                method.setAccessible(true);
-                AFTER_RUNNER_DO_METHOD_HOLDER.put(method, afterRunnerDo);
+            if (CollectionUtils.isEmpty(afterRunnerDoMethodsMap)) {
+                continue;
             }
+
+            for (Map.Entry<Method, AfterRunnerDo> entry : afterRunnerDoMethodsMap.entrySet()) {
+                AfterRunnerDoMethodWrapper afterRunnerDoMethodWrapper = AfterRunnerDoMethodWrapper.builderWrapper(bean, entry.getKey(), entry.getValue());
+                if (AFTER_RUNNER_DO_METHOD_HOLDER == null) {
+                    AFTER_RUNNER_DO_METHOD_HOLDER = new ArrayList<>(1);
+                }
+                AFTER_RUNNER_DO_METHOD_HOLDER.add(afterRunnerDoMethodWrapper);
+            }
+        }
+
+    }
+
+    /**
+     * 注解方法 {@link AfterRunnerDo} 执行的包装类
+     */
+    public static class AfterRunnerDoMethodWrapper extends BeanMethodHolder.MethodWrapper {
+        public AfterRunnerDo afterRunnerDo;
+
+        private static AfterRunnerDoMethodWrapper builderWrapper(Object bean, Method method, AfterRunnerDo afterRunnerDo) {
+            AfterRunnerDoMethodWrapper afterRunnerDoMethodWrapper = new AfterRunnerDoMethodWrapper();
+            afterRunnerDoMethodWrapper.setAfterRunnerDo(afterRunnerDo);
+            afterRunnerDoMethodWrapper.setMethod(method);
+            afterRunnerDoMethodWrapper.setTarget(bean);
+            return afterRunnerDoMethodWrapper;
+        }
+
+        public Object getTarget() {
+            return target;
+        }
+
+        public Method getMethod() {
+            return method;
+        }
+
+        public AfterRunnerDo getAfterRunnerDo() {
+            return afterRunnerDo;
+        }
+
+        public void setAfterRunnerDo(AfterRunnerDo afterRunnerDo) {
+            this.afterRunnerDo = afterRunnerDo;
+        }
+    }
+
+    /**
+     * 方法包装基类
+     */
+    private static abstract class MethodWrapper {
+        /**
+         * Bean
+         */
+        protected Object target;
+        /**
+         * 方法
+         */
+        protected Method method;
+
+        protected void setTarget(Object target) {
+            this.target = target;
+        }
+
+        protected void setMethod(Method method) {
+            this.method = method;
         }
     }
 }

@@ -1,4 +1,4 @@
-package cn.cocowwy.cocobootstarter.util;
+package cn.cocowwy.cocobootstarter.holder;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -9,17 +9,17 @@ import org.springframework.context.ApplicationContextAware;
  * @author <a href="https://github.com/Cocowwy">Cocowwy</a>
  * @since 2023/1/8
  */
-public class SpringUtil implements ApplicationContextAware {
+public class SpringHolder implements ApplicationContextAware {
     private static ApplicationContext applicationContext;
 
-    public SpringUtil() {
+    public SpringHolder() {
     }
 
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        SpringUtil.applicationContext = applicationContext;
+        SpringHolder.applicationContext = applicationContext;
     }
 
-    public static ApplicationContext getApplicationContext() {
+    protected static ApplicationContext getApplicationContext() {
         return applicationContext;
     }
 
