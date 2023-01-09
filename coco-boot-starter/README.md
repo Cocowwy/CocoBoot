@@ -15,4 +15,5 @@ public class AfterRunnerDoTests {
 
 
 ## 🍬 Feature2
-**SpringHolder** 提供Bean获取类，可获取到Bean
+**SpringHolder** 提供Bean获取类，可获取到Bean  
+```cn.cocowwy.cocobootstarter.holder.SpringHolder``` 
