@@ -2,7 +2,7 @@
 
 ## 🍬 Feature1
 **@AfterRunnerDo** 标记在指定的方法上（前提是该方法所在的类是一个Bean），能在项目启动后执行该方法
-```
+```java
 @Service
 @Slf4j
 public class AfterRunnerDoTests {

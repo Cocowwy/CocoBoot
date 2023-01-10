@@ -1,7 +1,7 @@
 package cn.cocowwy.common.util;
 
 /**
- * 隐私数据隐藏工具类
+ * 【工具】隐私数据隐藏工具类
  * @author <a href="https://github.com/Cocowwy">Cocowwy</a>
  * @since 2023/1/10
  */
