@@ -15,9 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration(proxyBeanMethods = false)
 @EnableConfigurationProperties({CocoBootProperties.class})
 @ConditionalOnProperty(value = "coco.boot.enable", matchIfMissing = true, havingValue = "true")
-@ComponentScan(basePackages = {
-        "cn.cocowwy.cocobootstarter.holder",
-})
+@ComponentScan(basePackages = {"cn.cocowwy.cocobootstarter.holder"})
 public class CocoBootAutoConfiguration {
     @Bean
     public AfterRunnerDoImpl afterRunnerDoPlus() {

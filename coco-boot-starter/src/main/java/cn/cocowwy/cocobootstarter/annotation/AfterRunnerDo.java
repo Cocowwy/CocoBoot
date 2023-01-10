@@ -1,6 +1,11 @@
 package cn.cocowwy.cocobootstarter.annotation;
 
-import java.lang.annotation.*;
+
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
+import java.lang.annotation.RetentionPolicy;
 
 /**
  * 仅标记在方法上面，会在SpringBoot项目启动后自动执行该方法

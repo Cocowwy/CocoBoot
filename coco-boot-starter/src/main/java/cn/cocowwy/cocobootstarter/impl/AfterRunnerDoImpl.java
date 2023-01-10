@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
  */
 public class AfterRunnerDoImpl implements ApplicationRunner {
 
-    private static final Log log = LogFactory.getLog(AfterRunnerDoImpl.class);
+    private static final Log LOG = LogFactory.getLog(AfterRunnerDoImpl.class);
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -49,7 +49,7 @@ public class AfterRunnerDoImpl implements ApplicationRunner {
                 if (blockOnError) {
                     throw new RuntimeException(e);
                 } else {
-                    log.error("Failed to execute method  [" + methodWrapper.getMethod().getName() + "]", e);
+                    LOG.error("Failed to execute method  [" + methodWrapper.getMethod().getName() + "]", e);
                 }
             }
 
