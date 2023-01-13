@@ -9,13 +9,25 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <properties>
+        <!--skip-->
+        <maven.install.skip>true</maven.install.skip>
+        <maven.deploy.skip>true</maven.deploy.skip>
+    </properties>
+
     <artifactId>test</artifactId>
     <version>${coco-boot-version}</version>
     <name>test</name>
     <description>test</description>
-
-
     <dependencies>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+            <version>2.2.6.RELEASE</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+
         <dependency>
             <groupId>cn.cocowwy</groupId>
             <artifactId>coco-boot-web-starter</artifactId>
@@ -30,6 +42,18 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cn.cocowwy</groupId>
+            <artifactId>coco-boot-openfegin-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- SpringCloud Ailibaba Nacos -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>2.2.6.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
 </project>

@@ -2,15 +2,16 @@ package cn.cocowwy.cocobootstarter.holder;
 
 import cn.cocowwy.cocobootstarter.annotation.AfterRunnerDo;
 import org.springframework.beans.factory.SmartInitializingSingleton;
-import org.springframework.cglib.core.MethodWrapper;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.MethodIntrospector;
 import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.lang.reflect.Method;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 指定Bean方法的持有者
@@ -22,7 +23,7 @@ public class BeanMethodHolder implements SmartInitializingSingleton {
     private static List<AfterRunnerDoMethodWrapper> AFTER_RUNNER_DO_METHOD_HOLDER = null;
 
     public static List<AfterRunnerDoMethodWrapper> afterRunnerDoList() {
-        if(CollectionUtils.isEmpty(AFTER_RUNNER_DO_METHOD_HOLDER)){
+        if (CollectionUtils.isEmpty(AFTER_RUNNER_DO_METHOD_HOLDER)) {
             return Collections.emptyList();
         }
         return AFTER_RUNNER_DO_METHOD_HOLDER;
@@ -37,8 +38,8 @@ public class BeanMethodHolder implements SmartInitializingSingleton {
             Object bean = applicationContext.getBean(beanName);
 
             Map<Method, AfterRunnerDo> afterRunnerDoMethodsMap = MethodIntrospector
-                    .selectMethods(bean.getClass(), (MethodIntrospector.MetadataLookup<AfterRunnerDo>) method
-                            -> AnnotatedElementUtils.findMergedAnnotation(method, AfterRunnerDo.class));
+                    .selectMethods(bean.getClass(),
+                            (MethodIntrospector.MetadataLookup<AfterRunnerDo>) method -> AnnotatedElementUtils.findMergedAnnotation(method, AfterRunnerDo.class));
 
             if (CollectionUtils.isEmpty(afterRunnerDoMethodsMap)) {
                 continue;
@@ -59,7 +60,7 @@ public class BeanMethodHolder implements SmartInitializingSingleton {
      * 注解方法 {@link AfterRunnerDo} 执行的包装类
      */
     public static class AfterRunnerDoMethodWrapper extends BeanMethodHolder.MethodWrapper {
-        public AfterRunnerDo afterRunnerDo;
+        private AfterRunnerDo afterRunnerDo;
 
         private static AfterRunnerDoMethodWrapper builderWrapper(Object bean, Method method, AfterRunnerDo afterRunnerDo) {
             AfterRunnerDoMethodWrapper afterRunnerDoMethodWrapper = new AfterRunnerDoMethodWrapper();
@@ -89,7 +90,7 @@ public class BeanMethodHolder implements SmartInitializingSingleton {
     /**
      * 方法包装基类
      */
-    private static abstract class MethodWrapper {
+    private abstract static class MethodWrapper {
         /**
          * Bean
          */

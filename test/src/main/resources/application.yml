@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: coco-test
+  cloud:
+    nacos:
+      server-addr:
+
+coco:
+  openfeign:
+    dev:
+      enable: true
+      route:
+        server1: 14.215.177.39:80
+        server2: 127.0.0.1:8082
+        server3: 127.0.0.1:8083

@@ -1,3 +1,5 @@
 # Auto Configure
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-cn.cocowwy.cocobootstarter.autoconfigure.CocoBootAutoConfiguration
+cn.cocowwy.cocobootstarter.autoconfigure.CocoBootAutoConfiguration,\
+cn.cocowwy.cocobootstarter.holder.BeanMethodHolder,\
+cn.cocowwy.cocobootstarter.holder.SpringHolder,
