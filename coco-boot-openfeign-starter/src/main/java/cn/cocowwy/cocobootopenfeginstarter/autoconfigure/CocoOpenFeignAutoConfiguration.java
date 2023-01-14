@@ -31,7 +31,6 @@ public class CocoOpenFeignAutoConfiguration {
      * @return PredicateBasedRule
      */
     @Bean
-    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     @ConditionalOnProperty(value = "coco.openfeign.dev.enable", matchIfMissing = true, havingValue = "true")
     @ConditionalOnMissingBean
     public PredicateBasedRule localHostAwareRule(DevOpenFeignProperties devOpenFeignProperties) {
