@@ -14,9 +14,9 @@ public class DevOpenFeignRoute {
     @Autowired
     private Server1Feign server1Feign;
 
-    @AfterRunnerDo
+    @AfterRunnerDo(blockOnError = false)
     public void testDevOpenFeign() {
-        System.out.println(server1Feign.getFromServer1());
+        server1Feign.getFromServer1();
     }
 }
 
