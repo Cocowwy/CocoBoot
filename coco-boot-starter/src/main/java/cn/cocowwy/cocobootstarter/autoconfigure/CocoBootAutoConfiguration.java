@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
  * @since 2023/1/9
  */
 @Configuration(proxyBeanMethods = false)
-//@ConditionalOnProperty(value = "coco.boot.enable", matchIfMissing = true, havingValue = "true")
 @ComponentScan(basePackages = {"cn.cocowwy.cocobootstarter.holder"})
 public class CocoBootAutoConfiguration {
     @Bean
