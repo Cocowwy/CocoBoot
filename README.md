@@ -24,7 +24,7 @@
 </dependency>
 <repositories>
     <repository>
-        <id>showdb-snapshots</id>
+        <id>snapshots</id>
         <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
         <snapshots>
             <enabled>true</enabled>
