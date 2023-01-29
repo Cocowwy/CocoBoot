@@ -9,20 +9,58 @@
         <version>2.3.10.RELEASE</version>
     </parent>
 
+
     <groupId>cn.cocowwy</groupId>
     <artifactId>coco-boot-aggregation</artifactId>
     <version>1.0-SNAPSHOT</version>
     <description>封装的一些starter，util工具，可自取需要的module</description>
     <packaging>pom</packaging>
+    <name>CocoBoot</name>
+    <url>https://github.com/Cocowwy/CocoBoot</url>
 
     <properties>
         <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-boot.version>2.3.10.RELEASE</spring-boot.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- 打包跳过单元测试 -->
+        <skipTests>true</skipTests>
         <!--version-coco-boot-->
         <coco-boot-version>1.0-SNAPSHOT</coco-boot-version>
-
-        <spring-boot.version>2.3.10.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.SR10</spring-cloud.version>
     </properties>
+
+    <developers>
+        <developer>
+            <id>Cocowwy</id>
+            <name>Cocowwy</name>
+            <email>514658459@qq.com</email>
+            <roles>
+                <role>Java Development Engineer</role>
+            </roles>
+            <timezone>2022-01-28 14:37:00</timezone>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>release</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
 
     <modules>
         <module>coco-boot-common</module>

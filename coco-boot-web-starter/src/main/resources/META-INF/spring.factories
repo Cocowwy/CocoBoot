@@ -1,4 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 cn.cocowwy.cocobootstarter.autoconfigure.CocoBootAutoConfiguration,\
 cn.cocowwy.cocobootstarter.holder.BeanMethodHolder,\
+cn.cocowwy.cocobootwebstarter.annotation.advice.GlobalExceptionHandler,\
 cn.cocowwy.cocobootstarter.holder.SpringHolder
