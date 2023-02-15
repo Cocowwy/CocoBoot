@@ -7,10 +7,7 @@ import com.netflix.loadbalancer.PredicateBasedRule;
 import com.netflix.loadbalancer.Server;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.commons.util.InetUtils;
-import org.springframework.util.StringUtils;
 
-import java.net.URI;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
