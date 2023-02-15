@@ -3,6 +3,8 @@ package cn.cocowwy.cocobootwebstarter.annotation.advice;
 import cn.cocowwy.common.base.rpc.Result;
 import cn.cocowwy.common.exception.BusinessException;
 import cn.cocowwy.common.exception.DownstreamException;
+import cn.cocowwy.common.exception.Error;
+import cn.cocowwy.common.exception.ErrorDefinition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -39,11 +41,11 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(BusinessException.class)
     @ResponseBody
-    public Result<Void> handleBusinessException(BusinessException e) {
+    public Result<?> handleBusinessException(BusinessException e) {
 
         LOGGER.error(e.getMessage(), e);
 
-        return Result.error(e.getMessage());
+        return Result.error(ErrorDefinition.BUSSINESS_EXCEPTION.getCode(), e.getMessage());
     }
 
     /**
@@ -53,10 +55,11 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(DownstreamException.class)
     @ResponseBody
-    public Result<Void> handleDownstreamException(DownstreamException e) {
+    public Result<?> handleDownstreamException(DownstreamException e) {
 
         LOGGER.error(e.getMessage(), e);
 
         return Result.error("下游报错：" + e.getMessage());
     }
+
 }
