@@ -14,6 +14,8 @@ public class Person {
     private String mobile;
     @PrivacyEncrypt(type = PrivacyTypeEnum.EMAIL)
     private String email;
+    @PrivacyEncrypt(type = PrivacyTypeEnum.ALL)
+    private String address;
 
     public String getName() {
         return name;
@@ -37,5 +39,13 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

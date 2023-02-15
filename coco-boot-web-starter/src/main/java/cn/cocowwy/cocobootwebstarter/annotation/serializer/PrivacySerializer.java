@@ -63,6 +63,9 @@ public class PrivacySerializer extends JsonSerializer<String> implements Context
                 case EMAIL:
                     jsonGenerator.writeString(PrivacyUtil.hideEmail(s));
                     break;
+                case ALL:
+                    jsonGenerator.writeString(PrivacyUtil.hideValue(s, 0, 0, symbol));
+                    break;
                 default:
                     throw new IllegalArgumentException("unknown privacy type enum " + type);
             }
