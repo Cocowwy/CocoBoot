@@ -13,3 +13,25 @@ public class Person {
     private String email;
 }
 ```
+
+## Feature2
+新增通过HTTP请求 shutdown服务的hook接口  
+使用姿势如下：
+```java
+@Configuration
+public class BeanConfig {
+
+    @Bean
+    public HttpShutdownHook httpShutdownHook() {
+        return new HttpShutdownHook();
+    }
+}
+
+```
+请在配置类中手动注入这个接口即可  
+**通过访问 HTTP 接口：** 
+```java
+/shutdownContext
+```
+即可"杀死服务"
+需要注意的是⚠️：**如果使用了 context-path 请求路径请自动补齐，如果使用了拦截器等进行接口拦截，请手动放行该接口。** 
