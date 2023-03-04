@@ -7,10 +7,9 @@
     <parent>
         <groupId>cn.cocowwy</groupId>
         <artifactId>coco-boot-aggregation</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>coco-boot-common</artifactId>
-    <version>${coco-boot-version}</version>
 
 </project>
