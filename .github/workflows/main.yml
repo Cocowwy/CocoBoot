@@ -3,7 +3,6 @@ name: Deploy CocoBoot maven
 on:
   push:
     branches:
-      - v1-dev
       - main
       - master
 
