@@ -66,6 +66,7 @@
         <module>coco-boot-starter</module>
         <module>coco-boot-web-starter</module>
         <module>coco-boot-openfeign-starter</module>
+        <module>coco-boot-web-starter</module>
         <module>test</module>
     </modules>
 
@@ -84,6 +85,36 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>coco-boot-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>coco-boot-openfegin-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>coco-boot-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>coco-boot-web-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>coco-boot-mb-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>test</artifactId>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
