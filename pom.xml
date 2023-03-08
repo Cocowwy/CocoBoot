@@ -66,6 +66,7 @@
         <module>coco-boot-starter</module>
         <module>coco-boot-web-starter</module>
         <module>coco-boot-openfeign-starter</module>
+        <module>coco-boot-mb-starter</module>
         <module>test</module>
     </modules>
 

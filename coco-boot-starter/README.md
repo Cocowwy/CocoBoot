@@ -7,11 +7,20 @@
 @Slf4j
 public class AfterRunnerDoTests {
     @AfterRunnerDo(blockOnError = false, sort = 100)
-    public void testAfterRunnerDoMethod(String[] args) {
-        log.info("This is Cocowwy 🎃");
+    public void testAfterRunnerDoMethod100() {
+        log.info("This is Cocowwy 🎃 100");
+    }
+
+    @AfterRunnerDo(blockOnError = false, sort = 99)
+    public void testAfterRunnerDoMethod99() {
+        log.info("This is Cocowwy 🎃 99");
     }
 }
 ```
+注意：
+该注解必须标记在public方法上
+blockOnError： 表示发生异常时是否阻碍容器的启动  
+sort： sort的值越大，执行的优先级越高
 
 
 ## 🍬 Feature2
