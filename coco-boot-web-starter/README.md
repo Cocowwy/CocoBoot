@@ -1,6 +1,6 @@
 # coco-boot-web-starter
 
-## 🍬 Feature1
+## 🍬 Feature1  web接口返回模糊化字段
 **@PrivacyEncrypt** 标注在字段上，web接口返回序列化时自动模糊化
 ```java
 @Data
@@ -14,7 +14,7 @@ public class Person {
 }
 ```
 
-## Feature2
+## Feature2  增加HTTP接口用于shutdown服务，注入bean即可
 新增通过HTTP请求 shutdown服务的hook接口  
 使用姿势如下：
 ```java

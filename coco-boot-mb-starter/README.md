@@ -7,17 +7,22 @@
 使用姿势：
 在配置累中注入如下Bean
 并使用注解：
-开发中......
-##  🍬 Feature2  explain执行计划 每个查询类SQL均会打印执行计划
-😜 **使用姿势： 在配置类中注入如下Bean**
 ```java
-@Bean
-public ExplainInterceptor explainInterceptor() {
-    ExplainInterceptor explainInterceptor = new ExplainInterceptor();
-    explainInterceptor.setPrintStack(true);
-    explainInterceptor.setSubscribeType(Arrays.asList("ALL"));
-    return explainInterceptor;
-}
+coco:
+  mb:
+    privacy: true
+```
+并且在入库的 **实体类和字段（注意实体类和字段上都需要）** 使用注解 @Privacy ，即可在数据库隐私🔏字段。  
+默认使用base64加密算法  
+（如果你想修改🔐加密算法）可实现 EncryptionDecryption 接口 @Bean 进你的配置类，就可以重写加密🔐算法
+
+
+##  🍬 Feature2  explain执行计划 每个查询类SQL均会打印执行计划
+😜 使用姿势： 
+```java
+coco:
+  mb:
+    explain: true
 ```
 **之后所有通过MyBatis/MyBatisPlus的查询SQL将会出现如下结果**
 ```text
