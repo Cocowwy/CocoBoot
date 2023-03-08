@@ -11,6 +11,5 @@
     </parent>
 
     <artifactId>coco-boot-common</artifactId>
-    <version>${coco-boot-version}</version>
 
 </project>

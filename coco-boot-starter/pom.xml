@@ -10,7 +10,6 @@
     </parent>
 
     <artifactId>coco-boot-starter</artifactId>
-    <version>${coco-boot-version}</version>
     <name>coco-boot-starter</name>
     <description>coco-boot-starter</description>
 
