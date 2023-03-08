@@ -39,7 +39,7 @@ public class AfterRunnerDoTests {
         log.info("testSort10 do");
     }
 //
-    @AfterRunnerDo(sort = 10)
+//    @AfterRunnerDo(sort = 10)
     public void test() {
         LambdaQueryWrapper<Number> lambdaQueryWrapper = new LambdaQueryWrapper<>();
         lambdaQueryWrapper.eq(Number::getId, 1L);

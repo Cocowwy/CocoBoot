@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+cn.cocowwy.cocobootmbstarter.interceptor.privacy.PrivacyInterceptorAutoConfiguration,\
+cn.cocowwy.cocobootmbstarter.interceptor.explain.ExplainAutoConfiguration

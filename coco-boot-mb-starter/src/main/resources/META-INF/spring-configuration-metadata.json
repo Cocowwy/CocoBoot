@@ -1,0 +1,16 @@
+{
+  "properties": [
+    {
+      "name": "coco.mb.explain",
+      "type": "java.lang.Boolean",
+      "description": "enable explain",
+      "defaultValue": false
+    },
+    {
+      "name": "coco.mb.privacy",
+      "type": "java.lang.Boolean",
+      "description": "enable privacy",
+      "defaultValue": false
+    }
+  ]
+}

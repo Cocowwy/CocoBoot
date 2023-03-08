@@ -54,7 +54,7 @@ public class AnnotatedUtils {
     }
 
     /**
-     * 获取错有的字段值
+     * 获取注解的字段值
      * @param object 类
      * @param containsSuper 是否获取父类
      * @return 字段集合

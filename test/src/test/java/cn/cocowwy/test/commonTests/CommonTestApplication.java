@@ -1,6 +1,7 @@
 package cn.cocowwy.test.commonTests;
 
-import cn.cocowwy.common.util.PrivacyUtil;
+import cn.cocowwy.common.util.AesBase64Utils;
+import cn.cocowwy.common.util.PrivacyUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,9 +16,15 @@ public class CommonTestApplication {
 
     @Test
     public void testPrivacy() {
-        System.out.println(PrivacyUtil.hidePhone("11111111111"));
-        System.out.println(PrivacyUtil.hidePhone("11111111111"));
-        System.out.println(PrivacyUtil.hideEmail("abcdefg@qq.com"));
-        System.out.println(PrivacyUtil.hideValue("Cocowwy is a good boy", 1, 1, "*"));
+        System.out.println(PrivacyUtils.hidePhone("11111111111"));
+        System.out.println(PrivacyUtils.hidePhone("11111111111"));
+        System.out.println(PrivacyUtils.hideEmail("abcdefg@qq.com"));
+        System.out.println(PrivacyUtils.hideValue("Cocowwy is a good boy", 1, 1, "*"));
+    }
+
+    @Test
+    public void test() throws Exception {
+        String encrypt = AesBase64Utils.encrypt("123213");
+        System.out.println(AesBase64Utils.decrypt(encrypt));
     }
 }

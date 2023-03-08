@@ -13,4 +13,12 @@
     <artifactId>coco-boot-common</artifactId>
     <version>${coco-boot-version}</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.netbeans.external</groupId>
+            <artifactId>org-apache-commons-codec</artifactId>
+            <version>RELEASE170</version>
+        </dependency>
+    </dependencies>
+
 </project>

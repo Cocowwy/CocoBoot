@@ -5,7 +5,7 @@ package cn.cocowwy.common.util;
  * @author <a href="https://github.com/Cocowwy">Cocowwy</a>
  * @since 2023/1/10
  */
-public class PrivacyUtil {
+public class PrivacyUtils {
 
     private static final String DEFAULT_SYMBOL = "*";
 
