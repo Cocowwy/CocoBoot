@@ -8,6 +8,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>coco-boot-openfegin-starter</artifactId>
+    <version>${coco-boot-version}</version>
     <name>coco-boot-openfeign-starter</name>
     <description>coco-boot-openfeign-starter</description>
 

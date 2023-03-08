@@ -12,6 +12,7 @@
 
     <groupId>cn.cocowwy</groupId>
     <artifactId>coco-boot-aggregation</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
     <description>封装的一些starter，util工具，可自取需要的module</description>
     <packaging>pom</packaging>
     <name>CocoBoot</name>

@@ -16,6 +16,7 @@
     </properties>
 
     <artifactId>test</artifactId>
+    <version>${coco-boot-version}</version>
     <name>test</name>
     <description>test</description>
     <dependencies>
