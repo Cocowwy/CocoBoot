@@ -91,7 +91,7 @@ public class ExplainInterceptor implements Interceptor {
         List<ExplainResult> er = getExplainResult(resultSet);
         StringBuilder info = new StringBuilder();
         if (er.size() > 0) {
-            info.append(er);
+            er.forEach(info::append);
             if (printStack) {
                 String stack = PrintUtils.printStack();
                 info.append("\n栈帧定位信息如下：\n").append(stack);
@@ -284,7 +284,7 @@ public class ExplainInterceptor implements Interceptor {
         @Override
         public String toString() {
             return
-                    "id=" + id +
+                    "｜ id=" + id +
                             " ｜ selectType='" + selectType + '\'' +
                             " ｜ table='" + table + '\'' +
                             " ｜ partitions='" + partitions + '\'' +
@@ -295,7 +295,7 @@ public class ExplainInterceptor implements Interceptor {
                             " ｜ ref='" + ref + '\'' +
                             " ｜ rows=" + rows +
                             " ｜ filtered=" + filtered +
-                            " ｜ extra='" + extra + '\'';
+                            " ｜ extra='" + extra + " ｜";
         }
     }
 
