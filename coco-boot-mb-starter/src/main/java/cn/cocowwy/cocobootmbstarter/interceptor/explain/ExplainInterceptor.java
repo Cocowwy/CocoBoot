@@ -295,7 +295,7 @@ public class ExplainInterceptor implements Interceptor {
                             " ｜ ref='" + ref + '\'' +
                             " ｜ rows=" + rows +
                             " ｜ filtered=" + filtered +
-                            " ｜ extra='" + extra + " ｜";
+                            " ｜ extra='" + extra + "' ｜";
         }
     }
 
