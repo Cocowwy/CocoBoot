@@ -9,6 +9,7 @@
 | coco-boot-starter           | starter模块，引入开启SpringBootStarter，并增强功能 | [🚪](https://github.com/Cocowwy/CocoBoot/tree/master/coco-boot-starter)           |
 | coco-boot-web-starter       | web模块，引入开启SpringBootWeb，并增强功能         | [🚪](https://github.com/Cocowwy/CocoBoot/tree/master/coco-boot-web-starter)       |
 | coco-boot-openfeign-starter | openfeign模块，引入开启openfeign，并增强功能       | [🚪](https://github.com/Cocowwy/CocoBoot/tree/master/coco-boot-openfeign-starter) |
+| coco-boot-mb-starter | mybatis，mybatis-plus拦截器增强模块，提供执行计划，隐私等功能       | [🚪](https://github.com/Cocowwy/CocoBoot/tree/master/coco-boot-mb-starter) |
 
 稳定版本使用：
 ```maven
