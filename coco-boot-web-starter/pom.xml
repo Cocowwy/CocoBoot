@@ -10,7 +10,6 @@
     </parent>
 
     <artifactId>coco-boot-web-starter</artifactId>
-    <version>${coco-boot-version}</version>
     <name>coco-boot-web-starter</name>
     <description>coco-boot-web-starter 增强</description>
 
