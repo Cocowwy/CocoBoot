@@ -7,18 +7,17 @@ package cn.cocowwy.common.exception;
  */
 public class BusinessException extends RuntimeException {
 
-    private Integer code;
+    private Error error = ErrorDefinition.UNDEFINED_EXCEPTION;
 
     public BusinessException(String message) {
         super(message);
     }
 
-    public BusinessException(Integer code, String message) {
-        super(message);
-        this.code = code;
+    public BusinessException(Error error) {
+        super(error.getMsg());
     }
 
-    public Integer getCode() {
-        return code;
+    public Error getError() {
+        return error;
     }
 }

@@ -10,4 +10,6 @@ public final class ErrorDefinition {
 
     public static final Error BUSSINESS_EXCEPTION = new Error(1001, "业务异常");
 
+
+
 }
