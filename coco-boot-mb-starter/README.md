@@ -16,6 +16,8 @@ coco:
 默认使用base64加密算法  
 （如果你想修改🔐加密算法）可实现 EncryptionDecryption 接口 @Bean 进你的配置类，就可以重写加密🔐算法
 
+⚠：如果使用的是MyBatisPlus的话 加密字段的修改如果使用Wrapper，则会失效！
+
 
 ##  🍬 Feature2  explain执行计划 每个查询类SQL均会打印执行计划
 😜 使用姿势： 
