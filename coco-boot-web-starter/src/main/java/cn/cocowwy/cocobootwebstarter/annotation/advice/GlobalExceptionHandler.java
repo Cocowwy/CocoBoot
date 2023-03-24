@@ -3,13 +3,14 @@ package cn.cocowwy.cocobootwebstarter.annotation.advice;
 import cn.cocowwy.common.base.rpc.Result;
 import cn.cocowwy.common.exception.BusinessException;
 import cn.cocowwy.common.exception.DownstreamException;
-import cn.cocowwy.common.exception.Error;
 import cn.cocowwy.common.exception.ErrorDefinition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Objects;
 
 /**
  * @author <a href="https://github.com/Cocowwy">Cocowwy</a>
@@ -45,7 +46,8 @@ public class GlobalExceptionHandler {
 
         LOGGER.error(e.getMessage(), e);
 
-        return Result.error(ErrorDefinition.BUSSINESS_EXCEPTION.getCode(), e.getMessage());
+        return Result.error(Objects.isNull(e.getCode())
+                ? ErrorDefinition.BUSSINESS_EXCEPTION.getCode() : e.getCode(), e.getMessage());
     }
 
     /**
