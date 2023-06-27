@@ -1,7 +1,7 @@
 # coco-boot-mb-starter
 
 基于MyBatis的拦截器实现的一些插件功能，适用于MyBatis以及MyBatisPlus  
-**使用前提：持久化层使用 MyBatis/MyBatis-Plus，该stater不提供mb和mbp的stater请自行添加**
+**使用前提：持久化层使用 MyBatis/MyBatis-Plus，该stater不提供mb和mbp的stater请自行添加（仅提供拦截器的实现）**
 
 ##  🍬 Feature1 字段加解密
 使用姿势：
