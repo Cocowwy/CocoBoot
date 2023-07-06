@@ -1,4 +1,4 @@
-package cn.cocowwy.common.util;
+package cn.cocowwy.cocobootmbstarter.interceptor.utils;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +16,7 @@ public class PrintUtils {
 	/**
 	 * 打印栈帧信息定位问题
 	 */
-	protected static String printStack() {
+	public static String printStack() {
 		List<StackTraceElement> stackTraces = Arrays.stream(Thread.currentThread().getStackTrace()).collect(toList());
 		StringBuilder traces = new StringBuilder();
 		stackTraces.forEach(it -> traces.append(it).append(LINE_BREAK));

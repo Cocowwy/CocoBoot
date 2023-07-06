@@ -1,7 +1,6 @@
 package cn.cocowwy.cocobootmbstarter.interceptor.privacy;
 
-import cn.cocowwy.common.util.AesBase64Utils;
-import cn.cocowwy.common.util.AnnotatedUtils;
+import cn.cocowwy.cocobootmbstarter.interceptor.utils.AnnotatedUtils;
 import org.apache.ibatis.binding.MapperMethod;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;
@@ -10,9 +9,9 @@ import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.plugin.Intercepts;
 import org.apache.ibatis.plugin.Invocation;
 import org.apache.ibatis.plugin.Signature;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 
+import javax.annotation.Resource;
 import java.lang.reflect.Field;
 import java.util.List;
 
@@ -26,7 +25,7 @@ import java.util.List;
 })
 public class PrivacyEncryptionInterceptor implements Interceptor {
 
-    @Autowired
+    @Resource
     private EncryptionDecryption encryptionDecryption;
 
     public PrivacyEncryptionInterceptor(EncryptionDecryption encryptionDecryption) {

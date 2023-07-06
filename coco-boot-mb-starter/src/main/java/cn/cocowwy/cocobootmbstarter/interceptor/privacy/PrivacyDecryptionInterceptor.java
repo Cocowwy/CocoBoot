@@ -1,6 +1,6 @@
 package cn.cocowwy.cocobootmbstarter.interceptor.privacy;
 
-import cn.cocowwy.common.util.AnnotatedUtils;
+import cn.cocowwy.cocobootmbstarter.interceptor.utils.AnnotatedUtils;
 import org.apache.ibatis.cache.CacheKey;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.BoundSql;
@@ -11,9 +11,9 @@ import org.apache.ibatis.plugin.Invocation;
 import org.apache.ibatis.plugin.Signature;
 import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.RowBounds;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 
+import javax.annotation.Resource;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ import java.util.List;
 })
 public class PrivacyDecryptionInterceptor implements Interceptor {
 
-    @Autowired
+    @Resource
     private EncryptionDecryption encryptionDecryption;
 
     public PrivacyDecryptionInterceptor(EncryptionDecryption encryptionDecryption) {

@@ -23,18 +23,18 @@
             <optional>true</optional>
         </dependency>
 
-        <!--引入coco-boot-common-->
-        <dependency>
-            <groupId>cn.cocowwy</groupId>
-            <artifactId>coco-boot-common</artifactId>
-            <version>${coco-boot-version}</version>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
             <scope>provided</scope>
             <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.netbeans.external</groupId>
+            <artifactId>org-apache-commons-codec</artifactId>
+            <version>RELEASE170</version>
         </dependency>
 
         <dependency>

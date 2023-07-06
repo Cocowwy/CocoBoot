@@ -13,16 +13,25 @@ import org.springframework.context.annotation.Configuration;
 @ConditionalOnProperty(value = "coco.mb.privacy", matchIfMissing = false, havingValue = "true")
 public class PrivacyInterceptorAutoConfiguration {
 
+    /**
+     * 解密拦截器
+     */
     @Bean
     public PrivacyDecryptionInterceptor privacyDecryptionInterceptor() {
         return new PrivacyDecryptionInterceptor();
     }
 
+    /**
+     * 加密拦截器
+     */
     @Bean
     public PrivacyEncryptionInterceptor privacyEncryptionInterceptor() {
         return new PrivacyEncryptionInterceptor();
     }
 
+    /**
+     * 设置默认的加密解密算法
+     */
     @Bean
     @ConditionalOnMissingBean(EncryptionDecryption.class)
     public DefaultEncryptionDecryption defaultEncryptionDecryption() {

@@ -1,6 +1,7 @@
 package cn.cocowwy.cocobootmbstarter.interceptor.privacy;
 
-import cn.cocowwy.common.util.AesBase64Utils;
+
+import cn.cocowwy.cocobootmbstarter.interceptor.utils.AesBase64Utils;
 
 /**
  * @author <a href="https://github.com/Cocowwy">Cocowwy</a>

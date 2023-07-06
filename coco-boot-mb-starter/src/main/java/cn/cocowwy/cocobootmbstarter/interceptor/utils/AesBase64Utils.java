@@ -1,4 +1,5 @@
-package cn.cocowwy.common.util;
+package cn.cocowwy.cocobootmbstarter.interceptor.utils;
+
 
 import org.apache.commons.codec.binary.Base64;
 

@@ -1,4 +1,4 @@
-package cn.cocowwy.common.util;
+package cn.cocowwy.cocobootmbstarter.interceptor.utils;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;

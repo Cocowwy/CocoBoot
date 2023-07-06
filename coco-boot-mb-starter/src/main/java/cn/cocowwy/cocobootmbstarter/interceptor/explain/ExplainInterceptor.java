@@ -1,6 +1,6 @@
 package cn.cocowwy.cocobootmbstarter.interceptor.explain;
 
-import cn.cocowwy.common.util.PrintUtils;
+import cn.cocowwy.cocobootmbstarter.interceptor.utils.PrintUtils;
 import org.apache.ibatis.cache.CacheKey;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.logging.Log;

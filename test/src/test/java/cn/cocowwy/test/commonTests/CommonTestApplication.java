@@ -1,6 +1,6 @@
 package cn.cocowwy.test.commonTests;
 
-import cn.cocowwy.common.util.AesBase64Utils;
+import cn.cocowwy.cocobootmbstarter.interceptor.utils.AesBase64Utils;
 import cn.cocowwy.common.util.PrivacyUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
